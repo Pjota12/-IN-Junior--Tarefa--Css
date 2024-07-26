@@ -1,11 +1,51 @@
-header {
+* {
+    box-sizing: border-box;
+  }
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+html{
+    height: 100%;
+}
+
+header, footer {
     background-color: #435892;
-    width: 100vw;
-    height: 50px;
-    position: fixed;
+    color: black;
+    padding: 10px;
+    height: 90px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    position: fixed;
 }
+  
+header {
+    top: 0;
+  }
+  
+footer {
+    bottom: 0;
+  }
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    min-height: calc(100vh - 100px); /* Ajuste para considerar header e footer */
+    background-color: #f2eee7;
+}
+/*--------------------------------------------------------------------------------------------------------------------*/
 
 #Burguer {
     display: none;
@@ -127,19 +167,14 @@ h1 {
     }
 }
 
-/*---------*/
-main {
-    background-color: #f2eee7;
-}
+/*--------------------------------------------------------------------------------------------------------------------*/
 
 .begin {
-    padding-right: 6em;
-    padding-top: 5em;
-    padding-bottom: 2em;
-    padding-left: 6em;
+    padding: 2em;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .begin>img {
@@ -176,38 +211,23 @@ main {
 @media only screen and (max-width:800px) {
 
     .begin {
-        display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        padding-right: 6em;
-        padding-top: 7em;
-        padding-bottom: 2em;
-        padding-left: 6em;
-    }
+        padding-top: 60px;
+      }
     
-    .begin > img{
-        margin-left: 0%;
-    }
-
-    .begin > div{
-        width: 300px;
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-        margin-left: 0px;
-    }
-
-    .DivApresetation>h2 {
+      .begin > div {
+        margin-left: 0;
+        width: 100%;
+      }
+    
+      .DivApresetation>h2 {
+        text-align: center;
+      }
+    
+      .DivApresetation>p {
         text-align: justify;
-        padding-top: 20px;
-    }
-
-        .DivApresetation>p {
-        font-size: 0.8em;
-        text-align: justify;
-        line-height: 15px;
-    }
+      }
 }
 
 
@@ -332,7 +352,7 @@ main {
 
 }
 
-
+/* Estilos do footer */
 /*---------*/
 footer {
     background-color: #435892;
@@ -341,6 +361,8 @@ footer {
     display: flex;
     justify-content: space-between;
     align-self: flex-end;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    position: relative;
 
 }
 
@@ -407,7 +429,7 @@ button > a{
     }
 
     form {
-        justify-content: center;
+        justify-content: flex-end;
         margin-right: 0px;
     }
 
@@ -423,8 +445,8 @@ button > a{
 
     .ul-of-final {
         display: flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: flex-start;
+        align-items: flex-start;
         flex-direction: row;
         flex-wrap: wrap;
     }
